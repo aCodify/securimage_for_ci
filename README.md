@@ -34,10 +34,10 @@ class Welcome extends Controller {
     function check(){
         $inputCode = $this->input->post('imagecode');
         if($this->securimage->check($inputCode) == true){
-            $data['result'] = '<h1>=v= PASS!</h1>';
+            $data['result'] = 'true';
             $this->load->view('test.html',$data);
         } else {
-            $data['result'] = '<h1>/_\ FAILURE</h1>';
+            $data['result'] = 'false';
             $this->load->view('test.html',$data);        
         }
     }
